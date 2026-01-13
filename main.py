@@ -18,7 +18,14 @@ else:
 
 st.write(message)
 
-show_text = st.button('Click fot text')
+if 'show_text' not in st.session_state:
+    st.session_state.show_text = False
 
-if show_text:
+
+def show_handler():
+    st.session_state.show_text = not st.session_state.show_text
+
+st.button("**Click for get text**", on_click=show_handler)
+
+if st.session_state.show_text:
     st.write('Hidden message!')
