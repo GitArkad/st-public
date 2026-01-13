@@ -10,4 +10,15 @@ st.title("Congratulations!!")
 first_name = st.text_input("Input first_name:", key="first_name")
 last_name = st.text_input("Input last_name:", key="last_name")
 
-st.write(f"Hello, {first_name} {last_name}!")
+if first_name == '' and last_name == '':
+    message = 'Hello!'
+else:
+
+    message = f"Hello, {first_name} {last_name}!"
+
+st.write(message)
+
+show_text = st.button('Click fot text')
+
+if show_text:
+    st.write('Hidden message!')
